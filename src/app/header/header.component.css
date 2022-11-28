@@ -1,0 +1,29 @@
+/* div.navbar-container {
+  background-color: rgb(174, 174, 177);
+  margin: 0;
+} */
+
+ul.navbar-wrapper {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+li.nav-links button {
+  padding: 5px;
+  background-color: transparent;
+  color: blue;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+li.nav-links button.active  {
+  font-weight: 600;
+  color: blue;
+  background-color: rgb(230, 230, 252);
+}
+
+li.nav-links button:hover {
+  background-color: rgb(230, 230, 252);
+}
+
