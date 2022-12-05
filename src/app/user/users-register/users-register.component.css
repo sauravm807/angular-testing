@@ -1,0 +1,9 @@
+.error-msg {
+  color: red;
+  /* padding-left: 8px;
+  font-size: .75rem; */
+}
+
+.error-bdr {
+  border: 1px solid red;
+}

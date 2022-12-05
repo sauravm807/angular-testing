@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "abcd",
+      "email": "abcd@gmail.com",
+      "password": "abcd"
+    },
+    {
+      "name": "saurav",
+      "email": "sauravvishal@globussoft.in",
+      "password": "SAvi@9056",
+      "id": 2
+    },
+    {
+      "name": "asda",
+      "email": "asda@globussoft.in",
+      "password": "asda",
+      "id": 3
+    },
+    {
+      "name": "saadasd",
+      "email": "saadasd@globussoft.in",
+      "password": "saadasd",
+      "id": 4
+    },
+    {
+      "name": "asdhgfahg ",
+      "email": "sauravvishal@globussoft.in",
+      "password": "SAvi@9056",
+      "id": 5
+    }
+  ]
+}

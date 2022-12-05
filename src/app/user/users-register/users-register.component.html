@@ -6,23 +6,53 @@
     </div>
 
     <div class="form-group mt-3">
-      <label for="exampleInputName">Name</label>
-      <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
-        placeholder="Enter name" formControlName="name">
+      <label for="exampleInputName" *ngIf="!name?.touched || !name?.invalid">Name</label>
+      <div *ngIf="name?.touched && name?.invalid">
+        <label class="error-msg" *ngIf="name?.errors!['minlength']">
+          Name should be minimun 3 character
+        </label>
+        <label class="error-msg" *ngIf="name?.errors!['required']">
+          Name is required *
+        </label>
+        <label class="error-msg" *ngIf="name?.errors!['cannotContainSpace']">
+          Name cannot have space in between *
+        </label>
+      </div>
+
+      <input type="text" class="form-control" [ngClass]="name?.touched && name?.invalid ?'error-bdr' : ''"
+        id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter name" formControlName="name">
     </div>
 
     <div class="form-group mt-3">
-      <label for="exampleInputEmail1">Email address</label>
+      <label for="exampleInputEmail1" *ngIf="!email?.touched || !email?.invalid">Email address</label>
+      <div *ngIf="email?.touched && email?.invalid">
+        <label class="error-msg" *ngIf="email?.errors!['required']">
+          Email address is required *
+        </label>
+        <label class="error-msg" *ngIf="email?.invalid && !email?.errors!['required']">
+          Email address should be valid *
+        </label>
+      </div>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-        placeholder="Enter email" formControlName="email">
+        placeholder="Enter email address" formControlName="email"
+        [ngClass]="email?.touched && email?.invalid ?'error-bdr' : ''">
     </div>
 
     <div class="form-group mt-3">
-      <label for="exampleInputPassword1">Password</label>
+      <label for="exampleInputPassword1" *ngIf="!password?.touched || !password?.invalid">Password</label>
+      <div *ngIf="password?.touched && password?.invalid">
+        <label class="error-msg" *ngIf="password?.errors!['required']">
+          Password is required *
+        </label>
+        <label class="error-msg" *ngIf="password?.errors!['minlength']">
+          Password should be minimum 3 character *
+        </label>
+      </div>
+
       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password"
-        formControlName="password">
+        formControlName="password" [ngClass]="password?.touched && password?.invalid ?'error-bdr' : ''">
     </div>
-    <button type="submit" class="btn btn-outline-secondary mt-3" [disabled]="!registerForm.valid">Submit</button>
+    <button type="submit" class="btn btn-outline-secondary mt-3">Submit</button>
   </form>
 
 </div>
